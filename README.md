@@ -22,14 +22,14 @@
 
 <br/><br/>
 
-`───` Shenkar — class of 2026 · Haifa, IL `───`
+`───` B.Sc. Software Engineering — Shenkar, 2026 · Haifa, IL `───`
 
 <table>
 <tr>
 <td align="center"><code>[ ROLE ]</code><br/><br/><b>Software Engineer</b></td>
 <td align="center"><code>[ FOCUS ]</code><br/><br/><b>Cyber · Full-stack · Backend</b></td>
 <td align="center"><code>[ BASED ]</code><br/><br/><b>Haifa, Israel</b></td>
-<td align="center"><code>[ STATUS ]</code><br/><br/><b>Open to intern & new-grad roles</b></td>
+<td align="center"><code>[ STATUS ]</code><br/><br/><b>Open to junior & new-grad roles</b></td>
 </tr>
 </table>
 
@@ -64,7 +64,7 @@
 
 ## Navigation engines, payroll systems, attack labs.
 
-Final-year Software Engineering student at Shenkar. My capstone is **NavSight** — a C++ visual-inertial odometry engine that navigates an Android phone when GPS is gone. Before that: **XPlanner**, a shift-and-payroll system accountants use in the field, and **B.H Nur**, ops software for a family construction business.
+Software Engineering graduate from Shenkar (B.Sc., 2026). My final project, **NavSight** — a C++ visual-inertial odometry engine that navigates an Android phone when GPS is gone — was graded 100/100 and held 91–93% distance accuracy through real GNSS jamming. Around it: **XPlanner**, a shift-and-payroll system accountants use in the field; **B.H Nur**, ops software for a family construction business; and **Skambil**, a multiplayer card game with an authoritative server.
 
 Most of my work sits between the web and low-level systems — Android + C++ over JNI, AWS serverless pipelines, network attack-and-defense labs in Scapy. The software I care about is the kind you measure in months of uptime, not demos.
 
@@ -72,20 +72,20 @@ Most of my work sits between the web and low-level systems — Android + C++ ove
 
 <table>
 <tr>
-<td align="center"><code>[ GRADUATING ]</code><br/><br/><b>Jul 2026</b></td>
-<td align="center"><code>[ REPOS ]</code><br/><br/><b>29+</b></td>
+<td align="center"><code>[ DEGREE ]</code><br/><br/><b>B.Sc. · 2026</b></td>
+<td align="center"><code>[ REPOS ]</code><br/><br/><b>40+</b></td>
 <td align="center"><code>[ LANGUAGES ]</code><br/><br/><b>AR · HE · EN</b></td>
 </tr>
 <tr>
 <td align="center"><code>[ IN PRODUCTION ]</code><br/><br/><b>3 systems</b></td>
-<td align="center"><code>[ VOLUNTEER ]</code><br/><br/><b>Bank Hapoalim</b></td>
+<td align="center"><code>[ FINAL PROJECT ]</code><br/><br/><b>100 / 100</b></td>
 <td align="center"><code>[ AWARD ]</code><br/><br/><b>1st — UX Challenge</b></td>
 </tr>
 </table>
 
 </div>
 
-> `[ AVAILABILITY ]` Graduating July 2026 · Open to intern and new-grad roles — cyber, full-stack, backend
+> `[ AVAILABILITY ]` B.Sc. 2026 · Open to junior and new-grad roles — cyber, full-stack, backend
 
 ---
 
@@ -93,29 +93,48 @@ Most of my work sits between the web and low-level systems — Android + C++ ove
 
 ## Selected work
 
-`11 projects · 2024 — 2026`
+`13 projects · 2024 — 2026`
 
 <details>
-<summary><code>01</code> <b>NavSight</b> — GPS-denied navigation for Android · <code>In Progress · 2026</code></summary>
+<summary><code>01</code> <b>NavSight</b> — GPS-denied navigation for Android · <code>Complete · B.Sc. final project · 100/100</code></summary>
 <br/>
 
-**Android navigation that keeps tracking position when GPS drops — using only the camera and the phone's inertial sensors.** A C++ visual-inertial odometry engine (MSCKF/EKF) tracks KLT optical-flow features, preintegrates IMU between frames, and applies zero-velocity updates to hold a live 6-DOF trajectory with drift correction.
+**Android navigation that keeps tracking position when GPS drops — using only the camera and the phone's inertial sensors.** A C++ visual-inertial core (15-DOF error-state EKF, KLT optical flow, IMU preintegration) reads metric speed off the road plane and an on-device Viterbi HMM map matcher pins the position to an OpenStreetMap road graph held in local storage. Built and measured in Haifa during wide-area GNSS jamming that froze the phone's own GPS for 61 s and inflated a 1,280 m route by 33%.
 
 | Attribute | Details |
 |:----------|:--------|
-| **Stack** | C++ · Kotlin · Jetpack Compose · OpenCV · Android NDK · JNI · CMake |
-| **Scale** | Full pipeline: native sensor-fusion engine → JNI bridge → turn-by-turn UI |
-| **Performance** | Real-time on-device pose estimation; zero-velocity updates suppress drift over long runs |
-| **Security** | Fully on-device — no GPS dependency, no location data leaves the phone |
-| **Impact** | Jetpack Compose UI with route snapping, AR direction overlay on the camera feed, live tracking-quality feedback, and GPX export; core C++ modules covered by unit tests |
-| **Repository** | [github.com/morad-z](https://github.com/morad-z?tab=repositories) |
+| **Stack** | C++ · Kotlin · Jetpack Compose · OpenCV · Android NDK · JNI · CMake · OpenStreetMap |
+| **Results** | **91–93% travelled-distance accuracy** under active jamming; median speed within 3.5% of reference; exactly 0 km/h at standstill |
+| **Performance** | **15.4 ms/frame** median tracking cost — 13x under the 200 ms budget; 13/13 system tests passing |
+| **Security** | Fully on-device — no GPS dependency, no network round-trip, no location data leaves the phone |
+| **Verification** | Desktop replay harness compiles the same C++ core and re-runs recorded rides byte-for-byte, so every engine change is A/B-scored in CI |
+| **Paper** | Preprint on Zenodo — [doi.org/10.5281/zenodo.21115254](https://doi.org/10.5281/zenodo.21115254) |
+| **Repository** | [github.com/morad-z/NavSight1](https://github.com/morad-z/NavSight1) |
 
-The hardest problem I've worked on: state estimation where every sensor lies a little, and the filter has to find the truth between them.
+Graded 100/100. The hardest problem I've worked on: state estimation where every sensor lies a little, and the filter has to find the truth between them.
 
 </details>
 
 <details>
-<summary><code>02</code> <b>XPlanner</b> — Worker shift & payroll system used by real accountants · <code>Production · 2025</code></summary>
+<summary><code>02</code> <b>Skambil</b> — Multiplayer 36-card trick-taking game, playable with friends · <code>Live · 2026</code></summary>
+<br/>
+
+**A Briscola-family card game with one rules engine shared by server and bots, an authoritative WebSocket server, and a first-person 3D web client that holds no game logic.** The client is deployed on Netlify; the match server is self-hosted and brought up for game nights.
+
+| Attribute | Details |
+|:----------|:--------|
+| **Stack** | C# / .NET (netstandard2.1) · ASP.NET Core WebSockets · TypeScript · React · Three.js · Vite · Docker |
+| **Engine** | Dependency-free C# rules library; three bot tiers; `xorshift64*` determinism — seed + action log replays any match byte-for-byte |
+| **Verification** | 24/24 spec vectors · 7/7 bot harness · **100,000-game fuzz** (every hand sums to exactly 120 points, 13,000 games/s) · 8/8 end-to-end server tests over four real WebSocket clients |
+| **Security** | Per-seat filtered views — a reflection-based audit over a full match found **0 leaked cards**; rate limiting, sequence numbers, illegal-play rejection |
+| **Server** | Private 5-character room codes, quick match with bot backfill, turn timers, disconnect grace with bot cover, reconnect with full resync |
+| **Client** | Seated camera, held cards as real meshes with spring-physics throws; WebGPU or WebGL2 with an accessible HTML table as automatic fallback; Arabic · Hebrew · English, RTL-first |
+| **Live** | [skambil.netlify.app](https://skambil.netlify.app) |
+
+</details>
+
+<details>
+<summary><code>03</code> <b>XPlanner</b> — Worker shift & payroll system used by real accountants · <code>Production · 2025</code></summary>
 <br/>
 
 **Desktop app managing shifts, payroll, and labor compliance** — with a constraint engine enforcing real labor law (55-hour weekly cap, night-shift fatigue rules).
@@ -134,18 +153,18 @@ Built with Clean Architecture and the Repository Pattern, fully TDD — because 
 </details>
 
 <details>
-<summary><code>03</code> <b>B.H Nur</b> — Construction, fleet & invoicing ops for a real family business · <code>Production · 2025</code></summary>
+<summary><code>04</code> <b>B.H Nur</b> — Construction, fleet, fuel-logistics & payroll ops for a real family business · <code>Production · 2025 — 2026</code></summary>
 <br/>
 
 **Operations platform for a real construction business** — tracks invoices, expenses, fuel logistics, workers, vehicles, loans, and projects in one system.
 
 | Attribute | Details |
 |:----------|:--------|
-| **Stack** | React · Express.js · Electron · TailwindCSS |
-| **Scale** | Covers the full business domain: invoicing, expenses, fuel, fleet, workforce, loans, projects |
+| **Stack** | React · Node.js / Express · MongoDB · Electron · TailwindCSS · GitHub Actions |
+| **Scale** | 20+ vehicles, fuel deliveries from 5+ depots, workers, parts, loans, projects — plus a role-based web portal where site managers report daily hours from their phones and the owner approves pay |
 | **Performance** | Multi-destination fuel-transfer tracking with full audit logs |
 | **Security** | Password-protected access; auto-backups; complete audit trail |
-| **Impact** | **In production** — Hebrew Excel exports built for the accountants who actually use them |
+| **Impact** | **In daily production since 2025** — 66 tagged releases shipped through a GitHub Actions build-and-publish workflow and an in-app auto-updater; Hebrew Excel exports built for the accountants who use them |
 | **Repository** | [github.com/morad-z](https://github.com/morad-z?tab=repositories) |
 
 Born from inefficiencies I saw firsthand managing the family business — then engineered into software the business now runs on.
@@ -153,7 +172,7 @@ Born from inefficiencies I saw firsthand managing the family business — then e
 </details>
 
 <details>
-<summary><code>04</code> <b>TopGear</b> — Full offline garage-management system · <code>Production · 2026</code></summary>
+<summary><code>05</code> <b>TopGear</b> — Full offline garage-management system · <code>Production · 2026</code></summary>
 <br/>
 
 **A full offline, Hebrew RTL Tauri desktop app that runs an entire car garage** — no server, no subscription, no constant internet. Typing a license plate auto-fills make, model, year, and engine size from Israel's Ministry of Transport registry; a tabbed job flow then tracks parts, labor, and VAT and prints a legally-compliant tax invoice or 14-day price quote to PDF.
@@ -172,7 +191,7 @@ Local-first taken seriously: the garage owns its data, the app works with no con
 </details>
 
 <details>
-<summary><code>05</code> <b>ZOBIDAT</b> — Avant-garde fashion site, scroll-pinned 3D WebGL lookbook · <code>Production · Live</code></summary>
+<summary><code>06</code> <b>ZOBIDAT</b> — Avant-garde fashion site, scroll-pinned 3D WebGL lookbook · <code>Production · Live</code></summary>
 <br/>
 
 **A bespoke, motion-led brand website for an avant-garde fashion label** — a scroll-pinned 3D WebGL lookbook with custom GLSL shader atmospherics and a two-"world" art-directed scroll narrative.
@@ -189,7 +208,7 @@ Local-first taken seriously: the garage owns its data, the app works with no con
 </details>
 
 <details>
-<summary><code>06</code> <b>Data Pipeline</b> — Serverless event-driven ETL on AWS · <code>Academic · 2025</code></summary>
+<summary><code>07</code> <b>Data Pipeline</b> — Serverless event-driven ETL on AWS · <code>Academic · 2025</code></summary>
 <br/>
 
 **Event-driven serverless pipeline:** S3 → SQS → Lambda → PostgreSQL with idempotent upserts, JSON schema validation, and a dead-letter queue for rejected records.
@@ -206,7 +225,7 @@ Local-first taken seriously: the garage owns its data, the app works with no con
 </details>
 
 <details>
-<summary><code>07</code> <b>Zoobar Red/Blue</b> — RCE chain vs. blockchain integrity ledger · <code>Security Research · 2026</code></summary>
+<summary><code>08</code> <b>Zoobar Red/Blue</b> — RCE chain vs. blockchain integrity ledger · <code>Security Research · 2026</code></summary>
 <br/>
 
 **Final project for Advanced Cyber — attack and detection in the same codebase.** Three real vulnerabilities chained against a privilege-separated web server, then caught by a custom integrity monitor.
@@ -225,7 +244,7 @@ Both sides of the exploit, end to end: how trust boundaries break, and how crypt
 </details>
 
 <details>
-<summary><code>08</code> <b>Network Security Lab</b> — Layer-2 attack & defense, DHCP spoofing and ARP MITM · <code>Security Research · 2024</code></summary>
+<summary><code>09</code> <b>Network Security Lab</b> — Layer-2 attack & defense, DHCP spoofing and ARP MITM · <code>Security Research · 2024</code></summary>
 <br/>
 
 **A closed-loop Layer-2 lab — attack and defense, demonstrated not just described.** Scapy scripts launch DHCP starvation, rogue-DHCP-offer, and ARP MITM traffic against isolated VMs; the same traffic is then blocked by the defense side.
@@ -242,14 +261,15 @@ Both sides of the exploit, end to end: how trust boundaries break, and how crypt
 </details>
 
 <details>
-<summary><code>09 — 11</code> <b>Archive</b> — Netflix Clone · Maze Generator · Connect Four · <code>Archived</code></summary>
+<summary><code>10 — 13</code> <b>Archive</b> — Ray Tracer · Netflix Clone · Maze Generator · Connect Four · <code>Archived</code></summary>
 <br/>
 
 | # | Project | Stack | Description |
 |:--|:--------|:------|:------------|
-| `09` | **[Netflix Clone](https://github.com/morad-z/netflix-clone-client)** | Node.js · React · MongoDB · JWT · TMDB | Full-stack streaming app with JWT auth, TMDB API integration, and an admin panel — deployed on Render |
-| `10` | **[Maze Generator](https://github.com/morad-z/Maze-Generator-C-OOP-)** | C++ (OOP) · Algorithms | DFS/Prim maze generation with BFS/DFS solving, custom dimensions, save/load, and solver visualization |
-| `11` | **[Connect Four](https://github.com/morad-z/Connect-4-game)** | Python · Sockets | Multiplayer game over raw TCP sockets with full win detection |
+| `10` | **[Ray Tracer](https://github.com/morad-z/raytracer)** | C++ · OpenGL | Phong shading, hard shadows, spotlight cutoffs and checkerboard planes rendered from a scene file — Computer Graphics course |
+| `11` | **[Netflix Clone](https://github.com/morad-z/netflix-clone-client)** | Node.js · React · MongoDB · JWT · TMDB | Full-stack streaming app with JWT auth, TMDB API integration, and an admin panel — deployed on Render |
+| `12` | **[Maze Generator](https://github.com/morad-z/Maze-Generator-C-OOP-)** | C++ (OOP) · Algorithms | DFS/Prim maze generation with BFS/DFS solving, custom dimensions, save/load, and solver visualization |
+| `13` | **[Connect Four](https://github.com/morad-z/Connect-4-game)** | Python · Sockets | Multiplayer game over raw TCP sockets with full win detection |
 
 </details>
 
@@ -396,7 +416,8 @@ current_focus:
     - Distributed systems & cloud architecture patterns
 
   building:
-    - NavSight — GPS-denied navigation engine (C++ / OpenCV / Android NDK)
+    - Skambil — multiplayer card game: C# rules engine, ASP.NET Core WebSocket server, Three.js client
+    - B.H Nur — site-manager hours portal and payroll approvals
     - Production desktop apps with Electron & Tauri (Rust)
 
   exploring:
@@ -406,9 +427,9 @@ current_focus:
   open_to:
     - Cyber / Security Engineering
     - Full-Stack & Backend Engineering
-    - Platform / Systems roles (intern & new-grad)
+    - Platform / Systems roles (junior & new-grad)
 
-  graduating: "B.Sc. Software Engineering — Shenkar College, July 2026"
+  degree: "B.Sc. Software Engineering — Shenkar College, 2026 · final project graded 100/100"
 ```
 
 ---
@@ -474,7 +495,7 @@ current_focus:
 
 <br/><br/>
 
-`© Morad Zubedat — built in Haifa` · `Open to intern & new-grad roles`
+`© Morad Zubedat — built in Haifa` · `Open to junior & new-grad roles`
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7a4708,20:241505,55:0d0a07,100:070605&height=140&section=footer" width="100%" alt="footer banner"/>
 
