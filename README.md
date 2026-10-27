@@ -1,17 +1,3 @@
-<!--
-
-          N
-         ╱│╲
-        ╱ │ ╲
-       ╱  │  ╲             Reading source at 2am?
-      W───●───E            Good. That is how I find people worth working with.
-       ╲  │  ╱
-        ╲ │ ╱              Transmit → contact@moradz.dev
-         ╲│╱
-          S
-
--->
-
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:070605,45:0d0a07,80:241505,100:7a4708&height=220&section=header&text=Morad%20Zubedat.&fontSize=64&fontColor=f4f0e8&animation=fadeIn&fontAlignY=38&desc=Navigation%20%C2%B7%20Localization%20%C2%B7%20Systems%20%C2%B7%20Cyber&descSize=20&descAlignY=58" width="100%" alt="header banner"/>
@@ -73,7 +59,7 @@ Most of my work sits between the web and low-level systems — Android + C++ ove
 <table>
 <tr>
 <td align="center"><code>[ DEGREE ]</code><br/><br/><b>B.Sc. · 2026</b></td>
-<td align="center"><code>[ REPOS ]</code><br/><br/><b>40+</b></td>
+<td align="center"><code>[ REPOS ]</code><br/><br/><b>40+ · 20 public</b></td>
 <td align="center"><code>[ LANGUAGES ]</code><br/><br/><b>AR · HE · EN</b></td>
 </tr>
 <tr>
@@ -93,7 +79,7 @@ Most of my work sits between the web and low-level systems — Android + C++ ove
 
 ## Selected work
 
-`13 projects · 2024 — 2026`
+`10 projects · 2024 — 2026`
 
 <details>
 <summary><code>01</code> <b>NavSight</b> — GPS-denied navigation for Android · <code>Complete · B.Sc. final project · 100/100</code></summary>
@@ -106,7 +92,7 @@ Most of my work sits between the web and low-level systems — Android + C++ ove
 | **Stack** | C++ · Kotlin · Jetpack Compose · OpenCV · Android NDK · JNI · CMake · OpenStreetMap |
 | **Results** | **91–93% travelled-distance accuracy** under active jamming; median speed within 3.5% of reference; exactly 0 km/h at standstill |
 | **Performance** | **15.4 ms/frame** median tracking cost — 13x under the 200 ms budget; 13/13 system tests passing |
-| **Security** | Fully on-device — no GPS dependency, no network round-trip, no location data leaves the phone |
+| **Privacy** | Fully on-device — no GPS dependency, no network round-trip, no location data leaves the phone |
 | **Verification** | Desktop replay harness compiles the same C++ core and re-runs recorded rides byte-for-byte, so every engine change is A/B-scored in CI |
 | **Paper** | Preprint on Zenodo — [doi.org/10.5281/zenodo.21115254](https://doi.org/10.5281/zenodo.21115254) |
 | **Repository** | [github.com/morad-z/NavSight1](https://github.com/morad-z/NavSight1) |
@@ -142,11 +128,11 @@ Graded 100/100. The hardest problem I've worked on: state estimation where every
 | Attribute | Details |
 |:----------|:--------|
 | **Stack** | TypeScript · React · Node.js · MongoDB · Electron · Jest · Vitest |
-| **Scale** | Real-time multi-client sync via MongoDB Change Streams |
-| **Performance** | Constraint engine validates schedules against compliance rules as they're built |
-| **Security** | Auto-backups on exit and crash — no data loss in the field |
+| **Sync** | Real-time multi-client sync via MongoDB Change Streams |
+| **Rules** | Constraint engine validates schedules against compliance rules as they're built |
+| **Reliability** | Auto-backups on exit and crash — no data loss in the field |
 | **Impact** | **In production, used daily by accountants**; generates styled Excel reports |
-| **Repository** | [github.com/morad-z](https://github.com/morad-z?tab=repositories) |
+| **Repository** | Private (production software for a client) |
 
 Built with Clean Architecture and the Repository Pattern, fully TDD — because payroll software has zero tolerance for bugs.
 
@@ -161,11 +147,11 @@ Built with Clean Architecture and the Repository Pattern, fully TDD — because 
 | Attribute | Details |
 |:----------|:--------|
 | **Stack** | React · Node.js / Express · MongoDB · Electron · TailwindCSS · GitHub Actions |
-| **Scale** | 20+ vehicles, fuel deliveries from 5+ depots, workers, parts, loans, projects — plus a role-based web portal where site managers report daily hours from their phones and the owner approves pay |
-| **Performance** | Multi-destination fuel-transfer tracking with full audit logs |
+| **Scope** | 20+ vehicles, fuel deliveries from 5+ depots, workers, parts, loans, projects — plus a role-based web portal where site managers report daily hours from their phones and the owner approves pay |
+| **Tracking** | Multi-destination fuel-transfer tracking with full audit logs |
 | **Security** | Password-protected access; auto-backups; complete audit trail |
 | **Impact** | **In daily production since 2025** — 66 tagged releases shipped through a GitHub Actions build-and-publish workflow and an in-app auto-updater; Hebrew Excel exports built for the accountants who use them |
-| **Repository** | [github.com/morad-z](https://github.com/morad-z?tab=repositories) |
+| **Repository** | Private (production software for the business) |
 
 Born from inefficiencies I saw firsthand managing the family business — then engineered into software the business now runs on.
 
@@ -180,13 +166,13 @@ Born from inefficiencies I saw firsthand managing the family business — then e
 | Attribute | Details |
 |:----------|:--------|
 | **Stack** | Tauri (Rust) · React · TypeScript · Dexie/IndexedDB · Zustand · TanStack Query · Tailwind CSS |
-| **Scale** | Full quote → job lifecycle, appointments board, per-vehicle history, and profit aggregation by plate |
-| **Performance** | Atomic transactional inventory — stock deduction/restore across the job lifecycle; instant local-first reads |
-| **Security** | Code-signed in-place auto-updater; fully offline data ownership with JSON + CSV export/import |
+| **Scope** | Full quote → job lifecycle, appointments board, per-vehicle history, and profit aggregation by plate |
+| **Data** | Atomic transactional inventory — stock deduction/restore across the job lifecycle; instant local-first reads |
+| **Ownership** | In-place auto-updater; fully offline, the garage owns its data, with JSON + CSV export/import |
 | **Impact** | **In production**; license-plate registry API integration, client-side PDF generation, WhatsApp customer messaging from templates |
 | **Repository** | [github.com/morad-z/TopGear](https://github.com/morad-z/TopGear) |
 
-Local-first taken seriously: the garage owns its data, the app works with no connection, and updates ship signed.
+Local-first taken seriously: the garage owns its data and the app works with no connection.
 
 </details>
 
@@ -199,16 +185,16 @@ Local-first taken seriously: the garage owns its data, the app works with no con
 | Attribute | Details |
 |:----------|:--------|
 | **Stack** | Astro 5 · TypeScript · GSAP (ScrollTrigger/SplitText) · Lenis · OGL/WebGL · GLSL · Cloudflare Pages |
-| **Scale** | Device-adaptive — GPU WebGL lookbook on desktop, touch-native CSS swipe deck on mobile |
+| **Devices** | Device-adaptive — GPU WebGL lookbook on desktop, touch-native CSS swipe deck on mobile |
 | **Performance** | **Lighthouse 100 desktop / 88 mobile, 0 CLS** — AVIF/WebP pipeline cut backgrounds ~99%, textures ~90%; self-hosted subset fonts |
-| **Security** | Full `prefers-reduced-motion` & accessibility support — focus trapping, semantic HTML, keyboard nav |
-| **Impact** | Shipped on GitHub → Cloudflare Pages CI/CD with custom domain, automatic SSL, and content-hashed immutable caching |
+| **Accessibility** | Full `prefers-reduced-motion` support, focus trapping, semantic HTML, keyboard navigation |
+| **Delivery** | Shipped on GitHub → Cloudflare Pages CI/CD with custom domain, automatic SSL, and content-hashed immutable caching |
 | **Live** | [zobidat.com](https://zobidat.com) |
 
 </details>
 
 <details>
-<summary><code>07</code> <b>Data Pipeline</b> — Serverless event-driven ETL on AWS · <code>Academic · 2025</code></summary>
+<summary><code>07</code> <b>Data Pipeline</b> — Serverless event-driven ETL on AWS · <code>Academic team project · 2025</code></summary>
 <br/>
 
 **Event-driven serverless pipeline:** S3 → SQS → Lambda → PostgreSQL with idempotent upserts, JSON schema validation, and a dead-letter queue for rejected records.
@@ -216,11 +202,11 @@ Local-first taken seriously: the garage owns its data, the app works with no con
 | Attribute | Details |
 |:----------|:--------|
 | **Stack** | Python · AWS S3/SQS/Lambda · PostgreSQL · Docker · LocalStack |
-| **Scale** | Queue-driven design decouples ingestion from processing |
-| **Performance** | Idempotent upserts guarantee safe replays |
-| **Security** | JSON schema validation at every system boundary; DLQ isolates bad records |
-| **Impact** | Fully reproducible local dev with Docker Compose + LocalStack before cloud deploy |
-| **Repository** | [github.com/morad-z/data-pipeline-2025](https://github.com/morad-z/data-pipeline-2025) |
+| **Design** | Queue-driven design decouples ingestion from processing |
+| **Reliability** | Idempotent upserts guarantee safe replays |
+| **Validation** | JSON schema validation at every system boundary; a DLQ isolates bad records |
+| **Local dev** | Fully reproducible local dev with Docker Compose + LocalStack before cloud deploy |
+| **Repository** | [github.com/morad-z/data-pipeline-2025](https://github.com/morad-z/data-pipeline-2025) (team repository, forked) |
 
 </details>
 
@@ -233,10 +219,10 @@ Local-first taken seriously: the garage owns its data, the app works with no con
 | Attribute | Details |
 |:----------|:--------|
 | **Stack** | Python · C · Flask · SQLAlchemy · x86 Assembly · SHA-256 |
-| **Scale** | Three chained CVE-class flaws across C parser, IPC socket, and ORM transfer logic |
-| **Performance** | `POST /../../bin/sh` path traversal in the C URL parser → unauthenticated RCE |
-| **Security** | World-writable microservice socket bypasses privilege separation; SQLAlchemy object-aliasing flaw mints money on self-transfers |
-| **Impact** | A SHA-256 blockchain ledger hashes every legitimate transfer against the previous block — when the aliasing exploit mutates the DB, the ledger math breaks and the integrity monitor flags tampering |
+| **Attack chain** | Three chained vulnerabilities across the C parser, an IPC socket, and the ORM's transfer logic |
+| **Entry** | `POST /../../bin/sh` path traversal in the C URL parser → unauthenticated RCE |
+| **Escalation** | World-writable microservice socket bypasses privilege separation; SQLAlchemy object-aliasing flaw mints money on self-transfers |
+| **Detection** | A SHA-256 blockchain ledger hashes every legitimate transfer against the previous block — when the aliasing exploit mutates the DB, the ledger math breaks and the integrity monitor flags tampering |
 | **Repository** | [github.com/morad-z/Advanced-cyber](https://github.com/morad-z/Advanced-cyber) |
 
 Both sides of the exploit, end to end: how trust boundaries break, and how cryptographic integrity catches the break.
@@ -252,24 +238,21 @@ Both sides of the exploit, end to end: how trust boundaries break, and how crypt
 | Attribute | Details |
 |:----------|:--------|
 | **Stack** | Python · Scapy · Wireshark · Linux VMs · DHCP Snooping · DAI |
-| **Scale** | Repeatable multi-VM lab topology with scripted attack automation |
-| **Performance** | Fully automated attack loop — no manual packet crafting |
-| **Security** | Defenses applied and verified: DHCP Snooping, Dynamic ARP Inspection, port security |
-| **Impact** | Every run is packet-captured in Wireshark so detection and mitigation are provable |
-| **Repository** | [github.com/morad-z](https://github.com/morad-z?tab=repositories) |
+| **Topology** | Repeatable multi-VM lab topology with scripted attack automation |
+| **Automation** | Fully automated attack loop — no manual packet crafting |
+| **Defenses** | Applied and verified: DHCP Snooping, Dynamic ARP Inspection, port security |
+| **Evidence** | Every run is packet-captured in Wireshark so detection and mitigation are provable |
+| **Repository** | Course lab (not published) |
 
 </details>
 
 <details>
-<summary><code>10 — 13</code> <b>Archive</b> — Ray Tracer · Netflix Clone · Maze Generator · Connect Four · <code>Archived</code></summary>
+<summary><code>10</code> <b>Archive</b> — Ray Tracer · <code>Archived</code></summary>
 <br/>
 
 | # | Project | Stack | Description |
 |:--|:--------|:------|:------------|
 | `10` | **[Ray Tracer](https://github.com/morad-z/raytracer)** | C++ · OpenGL | Phong shading, hard shadows, spotlight cutoffs and checkerboard planes rendered from a scene file — Computer Graphics course |
-| `11` | **[Netflix Clone](https://github.com/morad-z/netflix-clone-client)** | Node.js · React · MongoDB · JWT · TMDB | Full-stack streaming app with JWT auth, TMDB API integration, and an admin panel — deployed on Render |
-| `12` | **[Maze Generator](https://github.com/morad-z/Maze-Generator-C-OOP-)** | C++ (OOP) · Algorithms | DFS/Prim maze generation with BFS/DFS solving, custom dimensions, save/load, and solver visualization |
-| `13` | **[Connect Four](https://github.com/morad-z/Connect-4-game)** | Python · Sockets | Multiplayer game over raw TCP sockets with full win detection |
 
 </details>
 
@@ -281,18 +264,18 @@ Both sides of the exploit, end to end: how trust boundaries break, and how crypt
 
 Stacks I've shipped production software with — from C++ over JNI to serverless pipelines on AWS.
 
-#### Languages · `08`
+#### Languages
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=c,cpp,python,ts,js,kotlin,bash&theme=dark" alt="languages"/>
+  <img src="https://skillicons.dev/icons?i=c,cpp,cs,python,ts,js,kotlin,rust,bash&theme=dark" alt="languages"/>
   <br/>
   <img src="https://img.shields.io/badge/SQL-cf7d08?style=flat-square&labelColor=070605&logo=postgresql&logoColor=f4f0e8" alt="SQL"/>
 </div>
 
-#### Backend & Data · `08`
+#### Backend & Data
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,postgres,mysql&theme=dark" alt="backend and data"/>
+  <img src="https://skillicons.dev/icons?i=nodejs,express,dotnet,mongodb,postgres,mysql&theme=dark" alt="backend and data"/>
   <br/>
   <img src="https://img.shields.io/badge/REST_APIs-95590a?style=flat-square&labelColor=070605&logoColor=f4f0e8" alt="REST APIs"/>
   <img src="https://img.shields.io/badge/JWT_Auth-b8690a?style=flat-square&labelColor=070605&logo=jsonwebtokens&logoColor=f4f0e8" alt="JWT"/>
@@ -300,7 +283,7 @@ Stacks I've shipped production software with — from C++ over JNI to serverless
   <img src="https://img.shields.io/badge/Dexie_/_IndexedDB-e0930f?style=flat-square&labelColor=070605&logoColor=f4f0e8" alt="Dexie / IndexedDB"/>
 </div>
 
-#### Frontend & Desktop · `09`
+#### Frontend & Desktop
 
 <div align="center">
   <img src="https://skillicons.dev/icons?i=react,astro,electron,tailwind,vite,threejs,html,css&theme=dark" alt="frontend and desktop"/>
@@ -311,7 +294,7 @@ Stacks I've shipped production software with — from C++ over JNI to serverless
   <img src="https://img.shields.io/badge/WebGL_/_GLSL-f5a21b?style=flat-square&labelColor=070605&logo=webgl&logoColor=f4f0e8" alt="WebGL / GLSL"/>
 </div>
 
-#### Systems & Vision · `08`
+#### Systems & Vision
 
 <div align="center">
   <img src="https://skillicons.dev/icons?i=linux,cmake,androidstudio&theme=dark" alt="systems and vision"/>
@@ -322,7 +305,7 @@ Stacks I've shipped production software with — from C++ over JNI to serverless
   <img src="https://img.shields.io/badge/POSIX_·_Threads_·_Sockets-e0930f?style=flat-square&labelColor=070605&logo=linux&logoColor=f4f0e8" alt="POSIX"/>
 </div>
 
-#### Cloud & DevOps · `10`
+#### Cloud & DevOps
 
 <div align="center">
   <img src="https://skillicons.dev/icons?i=aws,docker,cloudflare,git,github&theme=dark" alt="cloud and devops"/>
@@ -332,7 +315,7 @@ Stacks I've shipped production software with — from C++ over JNI to serverless
   <img src="https://img.shields.io/badge/CI/CD-95590a?style=flat-square&labelColor=070605&logo=githubactions&logoColor=f4f0e8" alt="CI/CD"/>
 </div>
 
-#### Security & Networking · `05`
+#### Security & Networking
 
 <div align="center">
   <img src="https://img.shields.io/badge/Wireshark-95590a?style=flat-square&labelColor=070605&logo=wireshark&logoColor=f4f0e8" alt="Wireshark"/>
@@ -342,7 +325,7 @@ Stacks I've shipped production software with — from C++ over JNI to serverless
   <img src="https://img.shields.io/badge/MITM_Labs-95590a?style=flat-square&labelColor=070605&logoColor=f4f0e8" alt="MITM Labs"/>
 </div>
 
-#### Practices · `05`
+#### Practices
 
 <div align="center">
   <img src="https://img.shields.io/badge/TDD_·_Jest_·_Vitest_·_pytest-cf7d08?style=flat-square&labelColor=070605&logo=jest&logoColor=f4f0e8" alt="TDD"/>
@@ -352,18 +335,18 @@ Stacks I've shipped production software with — from C++ over JNI to serverless
   <img src="https://img.shields.io/badge/Code_Review-f5a21b?style=flat-square&labelColor=070605&logoColor=f4f0e8" alt="Code Review"/>
 </div>
 
-#### Proficiency
+#### What I've built with them
 
 <div align="center">
 
-| Domain | Proficiency | Details |
-|:-------|:-----------:|:--------|
-| **Offensive & Defensive Security** | `▓▓▓▓░ Advanced` | RCE chains (path traversal, privilege-separation bypass), SHA-256 blockchain integrity ledgers, DHCP/ARP attacks, DHCP Snooping & Dynamic ARP Inspection |
-| **Computer Vision & State Estimation** | `▓▓▓▓░ Advanced` | Visual-inertial odometry (MSCKF/EKF), KLT feature tracking, IMU preintegration, zero-velocity updates — real-time 6-DOF pose on Android |
-| **Production Desktop Engineering** | `▓▓▓▓░ Advanced` | Electron & Tauri (Rust) apps in daily production — transactional state, auto-backups, code-signed auto-updates, Excel reporting |
-| **Backend & Systems Programming** | `▓▓▓▓░ Advanced` | Node.js/Express REST APIs, JWT auth, MongoDB Change Streams; C/C++ on Linux — POSIX, threads, sockets, JNI bridges |
-| **Cloud & Event-Driven ETL** | `▓▓▓░░ Proficient` | AWS S3 → SQS → Lambda → PostgreSQL pipelines with idempotent upserts, DLQs, and LocalStack-based local dev |
-| **Engineering Practices** | `▓▓▓▓░ Advanced` | TDD (Jest, Vitest, pytest), Clean Architecture, Repository Pattern, DDD, code review |
+| Domain | Details |
+|:-------|:--------|
+| **Offensive & Defensive Security** | RCE chains (path traversal, privilege-separation bypass), SHA-256 blockchain integrity ledgers, DHCP/ARP attacks, DHCP Snooping & Dynamic ARP Inspection |
+| **Computer Vision & State Estimation** | Visual-inertial odometry (error-state EKF), KLT feature tracking, IMU preintegration, zero-velocity updates — real-time 6-DOF pose on Android |
+| **Production Desktop Engineering** | Electron & Tauri (Rust) apps in daily production — transactional state, auto-backups, in-app auto-updates, Excel reporting |
+| **Backend & Systems Programming** | Node.js/Express REST APIs, JWT auth, MongoDB Change Streams; C/C++ on Linux — POSIX, threads, sockets, JNI bridges |
+| **Cloud & Event-Driven ETL** | AWS S3 → SQS → Lambda → PostgreSQL pipelines with idempotent upserts, DLQs, and LocalStack-based local dev |
+| **Engineering Practices** | TDD (Jest, Vitest, pytest), Clean Architecture, Repository Pattern, DDD, code review |
 
 </div>
 
@@ -373,7 +356,7 @@ Stacks I've shipped production software with — from C++ over JNI to serverless
 
 ## Background
 
-### Manager — B.H. Nur Supermarket
+### Manager — B.H Nur Supermarket
 
 `[ WHERE ]` Kiryat Tivon  ·  `[ WHEN ]` Jan 2017 – Aug 2020
 
@@ -449,10 +432,6 @@ current_focus:
 
 <br/><br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=morad-z&bg_color=070605&color=9d968a&line=f5a21b&point=f4f0e8&area=true&area_color=7a4708&hide_border=true" width="100%" alt="contribution activity graph"/>
-
-<br/><br/>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/morad-z/morad-z/output/github-contribution-grid-snake-dark.svg"/>
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/morad-z/morad-z/output/github-contribution-grid-snake.svg"/>
@@ -472,10 +451,6 @@ current_focus:
 `● TRACK COMPLETE ───────────────── DEST · 32.79°N 34.98°E · HAIFA`
 
 <br/>
-
-`[ Let's build something that stays up ]`
-
-<br/><br/>
 
 <a href="mailto:contact@moradz.dev">
   <img src="https://img.shields.io/badge/Email-contact@moradz.dev-f5a21b?style=for-the-badge&labelColor=070605&logo=gmail&logoColor=f4f0e8" alt="Email"/>
